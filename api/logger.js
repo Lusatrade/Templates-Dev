@@ -8,6 +8,7 @@ const logger = (req,res,next)=>{
     let str = `${dt}\t${req.method}\t${req.path}\n\tBody:\t${body}\n\tQuery:\t${query}\n\tParams:\t${params}\n---------------------------------------------------\n`;
     fs.appendFile(logPath,str,(err)=>err?console.log(err):'')
     next()
+    //continue request
 }
 
 module.exports = logger
